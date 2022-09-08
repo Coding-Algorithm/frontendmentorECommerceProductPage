@@ -1,18 +1,23 @@
 import Image from 'next/image'
 import React, { FC, JSXElementConstructor, useState } from 'react'
+import { useSelector } from 'react-redux'
 import { productImages } from './ProductImages'
 
 const Main = () => {
 
+    const cart = useSelector((state) => {
+
+    })
+
     const [mainImage, setMainImage] = useState<string>("one")
 
-    interface Props {
-        text: String;
-        ok?: boolean;
-        i?: number;
-        fn?: (bob: String) => string;
-        image: File
-    }
+interface Props {
+    text: String;
+    ok?: boolean;
+    i?: number;
+    fn?: (bob: String) => string;
+    image: File
+}
 
     return (
         <div className='mainWrapper'>
@@ -42,7 +47,7 @@ const Main = () => {
                         }
                     </div>
                 </div>
-
+ 
                 <div className='mainRight'>
                     <div className='sneakerDetails'>
 

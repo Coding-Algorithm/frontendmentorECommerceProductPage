@@ -16,7 +16,7 @@ const NavComp: NextComponentType = (props: any) => {
       <div>Logo</div>
 
       {/* Nav */}
-      <nav className="w-4/6">
+      <nav className="w-4/6 md:w-3/6">
         <ul className="flex justify-between w-full text-grayishblue">
           <li
             onClick={() => setActiveLink("collection")}
@@ -53,7 +53,7 @@ const NavComp: NextComponentType = (props: any) => {
       </div>
 
       {/* Right Side */}
-      <div className="flex items-center justify-between w-32 sm:w-24">
+      <div className="flex items-center justify-between w-32  sm:w-24">
         <div>
           <Image
             className="hover:cursor-pointer"

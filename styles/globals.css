@@ -18,7 +18,7 @@ a{
 }
 
 .navRightSide{
-  @apply flex items-center justify-between w-full xlg:w-6/12
+  @apply flex items-center justify-between w-full md:w-3/5 xlg:w-6/12 
 }
 
 .navLink{
@@ -39,7 +39,7 @@ a{
 
 
 .mainWrapper{
-  @apply w-4/5 m-auto py-20 box-border h-[85vh] items-center justify-center
+  @apply w-4/5 m-auto py-20 box-border h-[85vh] items-center justify-center md:bg-orange lg:bg-red-400
 }
 
 
@@ -93,7 +93,7 @@ a{
 
 
 .sneakerPrice{
-  @apply flex w-1/6 text-[1.5rem] font-bold items-center justify-center
+  @apply flex w-2/6 text-[1.5rem] font-bold items-center justify-start
 }
 
 .sneakerDiscount{
