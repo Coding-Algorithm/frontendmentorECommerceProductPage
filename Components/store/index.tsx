@@ -1,16 +1,12 @@
-import {createStore} from 'redux'
+import { configureStore } from "@reduxjs/toolkit";
 
-const INITIAL_STATE = {
-    cart: {
-        cartItems: [],
-        cartTotal: 0,
+
+
+const store = configureStore({
+    reducer: {
+        
     }
-}
-
-const reducer = (state: Object, action: Function) => {
-
-}
+})
 
 
-const store = createStore(reducer)
-export default store;
+
