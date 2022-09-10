@@ -671,7 +671,7 @@ a{
   justify-content: space-between;
 }
 
-@media (min-width: 1440px) {
+@media (max-width: 1440px) {
   .navRightSide {
     width: 50%;
   }
@@ -758,7 +758,7 @@ a{
   width: 100%;
 }
 
-@media (min-width: 976px) {
+@media (max-width: 976px) {
   .mainLeft {
     width: 100%;
   }
@@ -812,7 +812,7 @@ a{
   justify-content: center;
 }
 
-@media (min-width: 976px) {
+@media (max-width: 976px) {
   .mainRight {
     width: 100%;
   }
@@ -934,7 +934,7 @@ a{
   cursor: pointer;
 }
 
-@media (min-width: 480px) {
+@media (max-width: 480px) {
   .sm\:w-24 {
     width: 6rem;
   }
