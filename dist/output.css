@@ -650,18 +650,42 @@ video {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
-html, body {
+html,
+body {
   padding: 0;
   margin: 0
 }
 
-a{
+a {
   color: inherit;
   text-decoration: none;
 }
 
-*{
+* {
   box-sizing: border-box;
+}
+
+.harmBurgerWrapper {
+  display: none;
+}
+
+@media (max-width: 480px) {
+  .harmBurgerWrapper {
+    display: flex;
+    height: 1.25rem;
+    width: 1.25rem;
+  }
+
+  .harmBurgerWrapper:hover {
+    cursor: pointer;
+  }
+}
+
+.harmBurger {
+  height: 100%;
+  width: 100%;
+  --tw-bg-opacity: 1;
+  background-color: hsl(0 0% 0% / var(--tw-bg-opacity));
 }
 
 .navRightSide {
@@ -671,10 +695,99 @@ a{
   justify-content: space-between;
 }
 
+@media (max-width: 768px) {
+  .navRightSide {
+    width: 66.666667%;
+  }
+}
+
 @media (max-width: 1440px) {
   .navRightSide {
     width: 50%;
   }
+}
+
+.navTag {
+  width: 66.666667%;
+}
+
+@media (max-width: 480px) {
+  .navTag {
+    z-index: 50;
+    --tw-bg-opacity: 1;
+    background-color: hsl(223 64% 98% / var(--tw-bg-opacity));
+  }
+}
+
+@media (max-width: 768px) {
+  .navTag {
+    width: 83.333333%;
+  }
+}
+
+@media (max-width: 1440px) {
+  .navTag {
+    width: 66.666667%;
+  }
+}
+
+@media (max-width: 480px) {
+  .navTag {
+    display: none;
+    padding: 0.75rem;
+  }
+
+  .showNavTag {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    display: flex;
+    height: 100%;
+    width: 50%;
+    justify-content: flex-start;
+  }
+}
+
+.closeHarmburger {
+  margin-bottom: 2.5rem;
+  display: none;
+  cursor: pointer;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
+@media (max-width: 480px) {
+  .closeHarmburger {
+    display: flex;
+    --tw-text-opacity: 1;
+    color: hsl(219 9% 45% / var(--tw-text-opacity));
+  }
+}
+
+.navUl {
+  top: 0px;
+  position: relative;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  --tw-text-opacity: 1;
+  color: hsl(220 14% 75% / var(--tw-text-opacity));
+}
+
+@media (max-width: 480px) {
+  .navUl {
+    top: 5rem;
+    height: 2.5rem;
+    flex-direction: column;
+  }
+}
+
+.navLink:hover::before {
+  display: block;
+  width: 100%;
+  content: var(--tw-content);
+  --tw-bg-opacity: 1;
+  background-color: hsl(26 100% 55% / var(--tw-bg-opacity));
 }
 
 .navLink:hover {
@@ -685,8 +798,26 @@ a{
 .navLink:hover::before {
   position: absolute;
   bottom: -2.3rem;
-  display: block;
+  content: var(--tw-content);
   height: 0.25rem;
+}
+
+@media (max-width: 480px) {
+  .navLink {
+    margin-bottom: 1.25rem;
+    font-weight: 700;
+    --tw-text-opacity: 1;
+    color: hsl(0 0% 0% / var(--tw-text-opacity));
+  }
+
+  .navLink:hover::before {
+    content: var(--tw-content);
+    display: none;
+  }
+}
+
+.activeLink::before {
+  display: block;
   width: 100%;
   content: var(--tw-content);
   --tw-bg-opacity: 1;
@@ -701,12 +832,17 @@ a{
 .activeLink::before {
   position: absolute;
   bottom: -2.3rem;
-  display: block;
-  height: 0.25rem;
-  width: 100%;
   content: var(--tw-content);
-  --tw-bg-opacity: 1;
-  background-color: hsl(26 100% 55% / var(--tw-bg-opacity));
+  height: 0.25rem;
+}
+
+.hoverPPix {
+  border-width: 1px;
+}
+
+.hoverPPix:hover:hover {
+  --tw-border-opacity: 1;
+  border-color: hsl(26 100% 55% / var(--tw-border-opacity));
 }
 
 .hoverPPix {
@@ -717,9 +853,6 @@ a{
 
 .hoverPPix:hover {
   cursor: pointer;
-  border-width: 1px;
-  --tw-border-opacity: 1;
-  border-color: hsl(26 100% 55% / var(--tw-border-opacity));
 }
 
 .cartViewWrapper {
@@ -735,21 +868,37 @@ a{
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
+@media (max-width: 480px) {
+  .cartViewWrapper {
+    right: 1rem;
+    top: 5rem;
+    z-index: 20;
+  }
+}
+
 .mainWrapper {
   margin: auto;
   box-sizing: border-box;
   height: 85vh;
   width: 80%;
   align-items: center;
-  justify-content: center;
   padding-top: 5rem;
   padding-bottom: 5rem;
+  justify-content: center;
 }
 
 .mainWrapperTwo {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 2.75rem;
+}
+
+@media (max-width: 480px) {
+  .mainWrapperTwo {
+    flex-direction: row;
+    --tw-bg-opacity: 1;
+    background-color: rgb(220 38 38 / var(--tw-bg-opacity));
+  }
 }
 
 .mainLeft {
@@ -781,10 +930,10 @@ a{
 
 .thumbNail {
   width: 100%;
-  align-items: center;
-  justify-content: center;
   overflow: hidden;
   border-radius: 0.75rem;
+  align-items: center;
+  justify-content: center;
 }
 
 .thumbNail:hover {
@@ -806,13 +955,13 @@ a{
   grid-column-start: 3;
   grid-column-end: 6;
   display: flex;
-  width: 100%;
   flex-direction: column;
+  width: 100%;
   align-content: center;
   justify-content: center;
 }
 
-@media (max-width: 976px) {
+@media (max-width: 768px) {
   .mainRight {
     width: 100%;
   }
@@ -833,6 +982,12 @@ a{
   font-weight: 700;
 }
 
+@media (max-width: 768px) {
+  .sneakerName {
+    width: 100%;
+  }
+}
+
 .sneakerDesc {
   margin-bottom: 2.5rem;
   width: 66.666667%;
@@ -841,11 +996,17 @@ a{
   color: hsl(220 14% 75% / var(--tw-text-opacity));
 }
 
+@media (max-width: 768px) {
+  .sneakerDesc {
+    width: 100%;
+  }
+}
+
 .sneakerPrice {
   display: flex;
-  width: 16.666667%;
+  width: 33.333333%;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   font-size: 1.5rem;
   font-weight: 700;
 }
@@ -853,6 +1014,9 @@ a{
 .sneakerDiscount {
   margin-left: 0.5rem;
   display: block;
+  font-size: 1rem;
+  --tw-text-opacity: 1;
+  color: hsl(26 100% 55% / var(--tw-text-opacity));
   align-items: center;
   border-radius: 0.375rem;
   --tw-bg-opacity: 1;
@@ -861,9 +1025,6 @@ a{
   padding-right: 0.25rem;
   padding-top: 0.125rem;
   padding-bottom: 0.125rem;
-  font-size: 1rem;
-  --tw-text-opacity: 1;
-  color: hsl(26 100% 55% / var(--tw-text-opacity));
 }
 
 .cartWrapper {
@@ -878,32 +1039,42 @@ a{
   width: 16.666667%;
   align-items: center;
   justify-content: space-between;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
   border-radius: 0.5rem;
   --tw-bg-opacity: 1;
   background-color: hsl(223 64% 98% / var(--tw-bg-opacity));
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
   font-size: 1.2rem;
   font-weight: 700;
 }
 
-.minus,  .plus {
+@media (max-width: 768px) {
+  .numControl {
+    width: 33.333333%;
+  }
+}
+
+.minus, 
+.plus {
   --tw-text-opacity: 1;
   color: hsl(26 100% 55% / var(--tw-text-opacity));
 }
 
-.minus:hover,  .plus:hover {
+.minus:hover, 
+.plus:hover {
   cursor: pointer;
 }
 
-.minus:active,  .plus:active {
+.minus:active, 
+.plus:active {
   --tw-text-opacity: 1;
   color: hsl(25 100% 94% / var(--tw-text-opacity));
 }
 
 .cartButton {
+  cursor: pointer;
   border-radius: 0.5rem;
   --tw-bg-opacity: 1;
   background-color: hsl(26 100% 55% / var(--tw-bg-opacity));
@@ -911,18 +1082,17 @@ a{
   padding-right: 2.5rem;
   padding-top: 1rem;
   padding-bottom: 1rem;
-  font-weight: 700;
   --tw-text-opacity: 1;
   color: hsl(0 0% 100% / var(--tw-text-opacity));
-  --tw-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
-  --tw-shadow-colored: 0 25px 50px -12px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  font-weight: 700;
   --tw-shadow-color: hsl(25, 100%, 94%);
   --tw-shadow: var(--tw-shadow-colored);
 }
 
 .cartButton:hover {
-  cursor: pointer;
+  --tw-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+  --tw-shadow-colored: 0 25px 50px -12px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
 .cartButton:active {
@@ -939,3 +1109,4 @@ a{
     width: 6rem;
   }
 }
+

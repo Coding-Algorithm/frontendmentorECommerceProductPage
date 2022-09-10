@@ -3,117 +3,165 @@
 @tailwind utilities;
 
 
-html, body {
+html,
+body {
   padding: 0;
   margin: 0
 }
 
-a{
+a {
   color: inherit;
   text-decoration: none;
 }
 
-*{
+* {
   box-sizing: border-box;
 }
 
-.navRightSide{
-  @apply flex items-center justify-between w-full xlg:w-6/12
+.harmBurgerWrapper{
+  @apply hidden sm:flex sm:w-5 sm:h-5 sm:hover:cursor-pointer
 }
 
-.navLink{
-  @apply hover:before:block hover:before:bg-orange hover:before:w-full hover:before:h-1 hover:before:absolute hover:before:-bottom-[2.3rem] hover:text-black
-}
-
-.activeLink{
-  @apply before:block before:bg-orange before:w-full before:h-1 before:absolute before:-bottom-[2.3rem] text-black
-}
-
-.hoverPPix{
-  @apply hover:border hover:border-orange hover:cursor-pointer rounded-full w-[50px] h-[50px]
-}
-
-.cartViewWrapper{
-  @apply fixed w-[21rem] bg-white shadow-2xl rounded-xl right-40 top-20
+.harmBurger{
+  @apply w-full h-full bg-black
 }
 
 
-.mainWrapper{
-  @apply w-4/5 m-auto py-20 box-border h-[85vh] items-center justify-center
+
+.navRightSide {
+  @apply flex items-center justify-between w-full md:w-4/6 xlg:w-6/12
+}
+
+.navTag{
+  @apply w-4/6 md:w-5/6 xlg:w-4/6 sm:bg-lightgrayishblue sm:z-50;
+  @apply sm:hidden sm:p-3
+}
+
+.showNavTag{
+  @apply sm:flex sm:fixed sm:left-0 sm:top-0 sm:h-full sm:w-3/6 sm:justify-start;
+  
 }
 
 
-.mainWrapperTwo{
-  @apply grid grid-cols-5 gap-11 
+.closeHarmburger{
+  @apply hidden sm:flex mb-10 text-3xl cursor-pointer sm:text-darkgrayishblue
 }
 
-.mainLeft{
-  @apply w-full col-start-1 col-end-3 lg:w-full 
+.navUl{
+  @apply relative top-0 flex justify-between w-full text-grayishblue;
+  @apply relative flex justify-between w-full sm:h-10 sm:top-20 text-grayishblue;
+  @apply sm:flex-col;
 }
 
-.mainImageWrapper{
+.navLink {
+  @apply hover:before:block hover:before:bg-orange hover:before:w-full;
+  @apply hover:before:h-1 hover:before:absolute hover:before:-bottom-[2.3rem] hover:text-black;
+  @apply sm:mb-5 sm:text-black sm:font-bold sm:hover:before:hidden
+}
+
+.activeLink {
+  @apply before:block before:bg-orange before:w-full;
+  @apply before:h-1 before:absolute before:-bottom-[2.3rem] text-black
+}
+
+.hoverPPix {
+  @apply border hover:hover:border-orange;
+  @apply hover:cursor-pointer rounded-full w-[50px] h-[50px]
+}
+
+.cartViewWrapper {
+  @apply fixed w-[21rem] bg-white shadow-2xl rounded-xl right-40 top-20;
+  @apply sm:right-4 sm:top-20 sm:z-20
+
+}
+
+
+.mainWrapper {
+  @apply w-4/5 m-auto py-20 box-border h-[85vh] items-center;
+  @apply justify-center
+}
+
+.mainWrapperTwo {
+  @apply grid grid-cols-5 gap-11;
+  @apply sm:flex-row sm:bg-red-600;
+}
+
+.mainLeft {
+  @apply w-full col-start-1 col-end-3 lg:w-full;
+}
+
+.mainImageWrapper {
   @apply w-11/12 rounded-3xl overflow-hidden mb-6
 }
 
-.thumbNailsWrapper{
+.thumbNailsWrapper {
   @apply w-11/12 grid grid-cols-4 gap-3 overflow-hidden
-
 }
 
-.thumbNail{
-  @apply w-full rounded-xl overflow-hidden items-center justify-center hover:cursor-pointer
+.thumbNail {
+  @apply w-full overflow-hidden rounded-xl;
+  @apply items-center justify-center hover:cursor-pointer
 }
 
-.activeImage{
+.activeImage {
   @apply border-4 border-orange
 }
 
-.thumbImage{
+.thumbImage {
   @apply w-1/2 h-full
 }
 
 
-
-
-.mainRight{
-  @apply flex flex-col w-full col-start-3 col-end-6 lg:w-full justify-center content-center
+.mainRight {
+  @apply flex flex-col w-full col-start-3 col-end-6;
+  @apply content-center justify-center w-full;
+  @apply md:w-full;
 }
 
-.sneakerComp{
+.sneakerComp {
   @apply uppercase font-bold text-orange mb-2
 }
 
-.sneakerName{
-  @apply text-[2.5rem] font-bold w-3/5 mb-10
+.sneakerName {
+  @apply text-[2.5rem] font-bold w-3/5 mb-10;
+  @apply md:w-full
 }
 
-.sneakerDesc{
-  @apply text-[1rem] text-grayishblue w-4/6 mb-10
-}
-
-
-.sneakerPrice{
-  @apply flex w-1/6 text-[1.5rem] font-bold items-center justify-center
-}
-
-.sneakerDiscount{
-  @apply block text-[1rem] ml-2 text-orange bg-paleorange items-center px-1 py-0.5 rounded-md
+.sneakerDesc {
+  @apply text-[1rem] text-grayishblue w-4/6 mb-10;
+  @apply md:w-full
 }
 
 
-.cartWrapper{
+.sneakerPrice {
+  @apply flex w-2/6 text-[1.5rem] font-bold items-center justify-start
+}
+
+.sneakerDiscount {
+  @apply block text-[1rem] ml-2 text-orange;
+  @apply bg-paleorange items-center px-1 py-0.5 rounded-md;
+}
+
+
+.cartWrapper {
   @apply flex items-center mt-7
 }
 
 .numControl {
-  @apply flex items-center mr-8 w-1/6 justify-between py-4 px-3 bg-lightgrayishblue rounded-lg font-bold text-[1.2rem]
+  @apply flex items-center justify-between w-1/6 px-3 py-4 mr-8;
+  @apply bg-lightgrayishblue rounded-lg font-bold text-[1.2rem];
+  @apply md:w-2/6
+
 }
 
-.minus, .plus{
+.minus,
+.plus {
   @apply text-orange hover:cursor-pointer active:text-paleorange
 }
 
 
-.cartButton{
-  @apply px-10 py-4 bg-orange hover:cursor-pointer text-white rounded-lg shadow-2xl shadow-paleorange font-bold active:bg-paleorange
+.cartButton {
+  @apply px-10 py-4 text-white rounded-lg cursor-pointer bg-orange ;
+  @apply hover:shadow-2xl shadow-paleorange font-bold active:bg-paleorange
 }
+
