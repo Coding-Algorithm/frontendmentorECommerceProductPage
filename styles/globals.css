@@ -82,7 +82,7 @@ a {
 }
 
 .mainWrapperTwo {
-  @apply grid grid-cols-5 gap-11;
+  @apply grid-cols-5 md:grid lg:grid xlg:grid gap-11;
   @apply sm:flex-row sm:bg-red-600;
 }
 
