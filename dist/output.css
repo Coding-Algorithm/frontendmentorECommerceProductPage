@@ -575,12 +575,16 @@ video {
   width: 80%;
 }
 
-.w-32 {
-  width: 8rem;
+.w-4\/6 {
+  width: 66.666667%;
 }
 
 .w-full {
   width: 100%;
+}
+
+.w-32 {
+  width: 8rem;
 }
 
 .flex-row {
