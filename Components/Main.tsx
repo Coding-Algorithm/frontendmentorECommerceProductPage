@@ -82,7 +82,6 @@ interface Props {
                             </div>
                     </div>
                 </div>
-
             </div>
         </div>
     )

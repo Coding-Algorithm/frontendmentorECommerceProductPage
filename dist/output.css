@@ -575,16 +575,12 @@ video {
   width: 80%;
 }
 
-.w-4\/6 {
-  width: 66.666667%;
+.w-32 {
+  width: 8rem;
 }
 
 .w-full {
   width: 100%;
-}
-
-.w-32 {
-  width: 8rem;
 }
 
 .flex-row {
@@ -666,13 +662,24 @@ a {
 }
 
 .harmBurgerWrapper {
-  display: flex;
+  display: none;
 }
 
-md
+@media (max-width: 480px) {
+  .harmBurgerWrapper {
+    display: flex;
+    height: 1.25rem;
+    width: 1.25rem;
+  }
+
+  .harmBurgerWrapper:hover {
+    cursor: pointer;
+  }
+}
+
 .harmBurger {
-  height: 0.5rem;
-  width: 0.5rem;
+  height: 100%;
+  width: 100%;
   --tw-bg-opacity: 1;
   background-color: hsl(0 0% 0% / var(--tw-bg-opacity));
 }
@@ -684,15 +691,90 @@ md
   justify-content: space-between;
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   .navRightSide {
     width: 66.666667%;
   }
 }
 
-@media (min-width: 1440px) {
+@media (max-width: 1440px) {
   .navRightSide {
     width: 50%;
+  }
+}
+
+.navTag {
+  width: 66.666667%;
+}
+
+@media (max-width: 480px) {
+  .navTag {
+    z-index: 50;
+    --tw-bg-opacity: 1;
+    background-color: hsl(223 64% 98% / var(--tw-bg-opacity));
+  }
+}
+
+@media (max-width: 768px) {
+  .navTag {
+    width: 83.333333%;
+  }
+}
+
+@media (max-width: 1440px) {
+  .navTag {
+    width: 66.666667%;
+  }
+}
+
+@media (max-width: 480px) {
+  .navTag {
+    display: none;
+    padding: 0.75rem;
+  }
+
+  .showNavTag {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    display: flex;
+    height: 100%;
+    width: 50%;
+    justify-content: flex-start;
+  }
+}
+
+.closeHarmburger {
+  margin-bottom: 2.5rem;
+  display: none;
+  cursor: pointer;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
+@media (max-width: 480px) {
+  .closeHarmburger {
+    display: flex;
+    --tw-text-opacity: 1;
+    color: hsl(219 9% 45% / var(--tw-text-opacity));
+  }
+}
+
+.navUl {
+  top: 0px;
+  position: relative;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  --tw-text-opacity: 1;
+  color: hsl(220 14% 75% / var(--tw-text-opacity));
+}
+
+@media (max-width: 480px) {
+  .navUl {
+    top: 5rem;
+    height: 2.5rem;
+    flex-direction: column;
   }
 }
 
@@ -716,10 +798,17 @@ md
   height: 0.25rem;
 }
 
-@media (min-width: 480px) {
+@media (max-width: 480px) {
   .navLink {
-    --tw-bg-opacity: 1;
-    background-color: hsl(0 0% 0% / var(--tw-bg-opacity));
+    margin-bottom: 1.25rem;
+    font-weight: 700;
+    --tw-text-opacity: 1;
+    color: hsl(0 0% 0% / var(--tw-text-opacity));
+  }
+
+  .navLink:hover::before {
+    content: var(--tw-content);
+    display: none;
   }
 }
 
@@ -775,6 +864,14 @@ md
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
+@media (max-width: 480px) {
+  .cartViewWrapper {
+    right: 1rem;
+    top: 5rem;
+    z-index: 20;
+  }
+}
+
 .mainWrapper {
   margin: auto;
   box-sizing: border-box;
@@ -792,13 +889,21 @@ md
   gap: 2.75rem;
 }
 
+@media (max-width: 480px) {
+  .mainWrapperTwo {
+    flex-direction: row;
+    --tw-bg-opacity: 1;
+    background-color: rgb(220 38 38 / var(--tw-bg-opacity));
+  }
+}
+
 .mainLeft {
   grid-column-start: 1;
   grid-column-end: 3;
   width: 100%;
 }
 
-@media (min-width: 976px) {
+@media (max-width: 976px) {
   .mainLeft {
     width: 100%;
   }
@@ -852,7 +957,7 @@ md
   justify-content: center;
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   .mainRight {
     width: 100%;
   }
@@ -873,7 +978,7 @@ md
   font-weight: 700;
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   .sneakerName {
     width: 100%;
   }
@@ -887,7 +992,7 @@ md
   color: hsl(220 14% 75% / var(--tw-text-opacity));
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   .sneakerDesc {
     width: 100%;
   }
@@ -941,7 +1046,7 @@ md
   font-weight: 700;
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   .numControl {
     width: 33.333333%;
   }
@@ -995,20 +1100,9 @@ md
   cursor: pointer;
 }
 
-@media (min-width: 480px) {
+@media (max-width: 480px) {
   .sm\:w-24 {
     width: 6rem;
-  }
-
-  .sm\:bg-red-500 {
-    --tw-bg-opacity: 1;
-    background-color: rgb(239 68 68 / var(--tw-bg-opacity));
-  }
-}
-
-@media (min-width: 768px) {
-  .md\:w-5\/6 {
-    width: 83.333333%;
   }
 }
 

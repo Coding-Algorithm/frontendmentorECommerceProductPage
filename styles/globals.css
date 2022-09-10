@@ -19,11 +19,11 @@ a {
 }
 
 .harmBurgerWrapper{
-  @apply flex
+  @apply hidden sm:flex sm:w-5 sm:h-5 sm:hover:cursor-pointer
 }
-md
+
 .harmBurger{
-  @apply w-2 h-2 bg-black
+  @apply w-full h-full bg-black
 }
 
 
@@ -32,10 +32,31 @@ md
   @apply flex items-center justify-between w-full md:w-4/6 xlg:w-6/12
 }
 
+.navTag{
+  @apply w-4/6 md:w-5/6 xlg:w-4/6 sm:bg-lightgrayishblue sm:z-50;
+  @apply sm:hidden sm:p-3
+}
+
+.showNavTag{
+  @apply sm:flex sm:fixed sm:left-0 sm:top-0 sm:h-full sm:w-3/6 sm:justify-start;
+  
+}
+
+
+.closeHarmburger{
+  @apply hidden sm:flex mb-10 text-3xl cursor-pointer sm:text-darkgrayishblue
+}
+
+.navUl{
+  @apply relative top-0 flex justify-between w-full text-grayishblue;
+  @apply relative flex justify-between w-full sm:h-10 sm:top-20 text-grayishblue;
+  @apply sm:flex-col;
+}
+
 .navLink {
   @apply hover:before:block hover:before:bg-orange hover:before:w-full;
   @apply hover:before:h-1 hover:before:absolute hover:before:-bottom-[2.3rem] hover:text-black;
-  @apply sm:bg-black
+  @apply sm:mb-5 sm:text-black sm:font-bold sm:hover:before:hidden
 }
 
 .activeLink {
@@ -49,7 +70,9 @@ md
 }
 
 .cartViewWrapper {
-  @apply fixed w-[21rem] bg-white shadow-2xl rounded-xl right-40 top-20
+  @apply fixed w-[21rem] bg-white shadow-2xl rounded-xl right-40 top-20;
+  @apply sm:right-4 sm:top-20 sm:z-20
+
 }
 
 
@@ -59,11 +82,12 @@ md
 }
 
 .mainWrapperTwo {
-  @apply grid grid-cols-5 gap-11
+  @apply grid grid-cols-5 gap-11;
+  @apply sm:flex-row sm:bg-red-600;
 }
 
 .mainLeft {
-  @apply w-full col-start-1 col-end-3 lg:w-full
+  @apply w-full col-start-1 col-end-3 lg:w-full;
 }
 
 .mainImageWrapper {
@@ -91,7 +115,7 @@ md
 .mainRight {
   @apply flex flex-col w-full col-start-3 col-end-6;
   @apply content-center justify-center w-full;
-  @apply md:w-full
+  @apply md:w-full;
 }
 
 .sneakerComp {

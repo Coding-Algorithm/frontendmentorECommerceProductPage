@@ -8,21 +8,23 @@ import { MdShoppingCart } from "react-icons/md";
 const NavComp: NextComponentType = (props) => {
   const [activeLink, setActiveLink] = useState<string>("");
   const [showCart, setShowCart] = useState<boolean>(false);
+  const [showNavTag, setShowNavTag] = useState<boolean>(false)
 
   return (
     <div className="box-border flex flex-row items-center justify-between w-4/5 py-5 m-auto border-b border-grayishblue">
       {/* Logo */}
       <div className="navRightSide">
-        <div className="harmBurgerWrapper">
+        <div onClick={() => { setShowNavTag(true); console.log(showNavTag) }} className="harmBurgerWrapper">
           <span className="harmBurger"></span>
         </div>
         <div>Logo</div>
 
         {/* Nav */}
-        <nav className="w-4/6 md:w-5/6">
-
-
-          <ul className="flex justify-between w-full sm:bg-red-500 text-grayishblue">
+        <nav className={`navTag ${showNavTag && "showNavTag"}`}>
+          <div onClick={() => { setShowNavTag(false) }} className="closeHarmburger">
+            <span>x</span>
+          </div>
+          <ul className={`navUl`}>
             <li
               onClick={() => setActiveLink("collection")}
               className={`relative ${activeLink === "collection" && "activeLink"} navLink`}
