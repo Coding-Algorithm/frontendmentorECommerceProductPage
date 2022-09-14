@@ -23,11 +23,11 @@ a {
 }
 
 .harmBurger{
-  @apply w-full h-full bg-black
+  @apply w-full h-full
 }
 
 .navRightSide {
-  @apply flex items-center justify-between w-full md:w-4/6 xlg:w-6/12
+  @apply flex items-center justify-between w-full md:w-5/6  sm:w-4/6 lg:w-4/6 xlg:w-4/6 2xl:w-4/6
 }
 
 .navTag{
@@ -54,7 +54,7 @@ a {
   @apply hover:before:block hover:before:bg-orange hover:before:w-full;
   @apply hover:before:h-1 hover:before:absolute hover:before:-bottom-[2.3rem] hover:text-black;
   @apply sm:mb-5 sm:text-black sm:font-bold sm:hover:before:hidden;
-  @apply md:w-4/5 md:bg-orange lg:w-4/6;
+  @apply md:w-4/5  lg:w-4/6 sm:bg-none;
 }
 
 .activeLink {

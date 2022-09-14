@@ -52,14 +52,29 @@ const NavComp: NextComponentType = (props) => {
       {/* Logo */}
       <div className="navRightSide">
         <div onClick={() => { setShowNavTag(true) }} className="harmBurgerWrapper">
-          <span className="harmBurger"></span>
+          <span className="harmBurger">
+            <Image
+            src={require('../assets/images/icon-menu.svg')}
+            alt="icon menu"
+            />
+          </span>
         </div>
-        <div>Logo</div>
+        <div>
+          <Image
+          src={require('../assets/images/logo.svg')}
+          alt="Logo"
+          />
+        </div>
 
         {/* Nav */}
         <nav className={`navTag ${showNavTag && "showNavTag"}`}>
           <div onClick={() => { setShowNavTag(false) }} className="closeHarmburger">
-            <span>x</span>
+            <span>
+              <Image
+              src={require('../assets/images/icon-close.svg')}
+              alt="Icon close"
+              />
+            </span>
           </div>
           <ul className={`navUl`}>
             <li

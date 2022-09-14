@@ -738,8 +738,6 @@ a {
 .harmBurger {
   height: 100%;
   width: 100%;
-  --tw-bg-opacity: 1;
-  background-color: hsl(0 0% 0% / var(--tw-bg-opacity));
 }
 
 .navRightSide {
@@ -749,7 +747,19 @@ a {
   justify-content: space-between;
 }
 
+@media (max-width: 640px) {
+  .navRightSide {
+    width: 66.666667%;
+  }
+}
+
 @media (max-width: 768px) {
+  .navRightSide {
+    width: 83.333333%;
+  }
+}
+
+@media (max-width: 1024px) {
   .navRightSide {
     width: 66.666667%;
   }
@@ -757,7 +767,13 @@ a {
 
 @media (max-width: 1280px) {
   .navRightSide {
-    width: 50%;
+    width: 66.666667%;
+  }
+}
+
+@media (max-width: 1536px) {
+  .navRightSide {
+    width: 66.666667%;
   }
 }
 
@@ -868,13 +884,15 @@ a {
     content: var(--tw-content);
     display: none;
   }
+
+  .navLink {
+    background-image: none;
+  }
 }
 
 @media (max-width: 768px) {
   .navLink {
     width: 80%;
-    --tw-bg-opacity: 1;
-    background-color: hsl(26 100% 55% / var(--tw-bg-opacity));
   }
 }
 
