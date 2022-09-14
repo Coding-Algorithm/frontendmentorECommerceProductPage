@@ -1274,5 +1274,15 @@ a {
     padding-left: 2.5rem;
     padding-right: 2.5rem;
   }
+
+  .sm\:px-5 {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  .sm\:px-3 {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
 }
 

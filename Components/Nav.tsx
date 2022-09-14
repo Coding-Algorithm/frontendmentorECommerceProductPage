@@ -48,7 +48,7 @@ const NavComp: NextComponentType = (props) => {
   console.log(cartItems)
 
   return (
-    <div className="sm:fixed z-10 box-border flex flex-row items-center justify-between w-4/5 py-5 m-auto border-b sm:bg-white border-grayishblue sm:w-full sm:px-10">
+    <div className="sm:fixed z-10 box-border flex flex-row items-center justify-between w-4/5 py-5 m-auto border-b sm:bg-white border-grayishblue sm:w-full sm:px-3">
       {/* Logo */}
       <div className="navRightSide">
         <div onClick={() => { setShowNavTag(true) }} className="harmBurgerWrapper">
