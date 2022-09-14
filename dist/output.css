@@ -551,8 +551,24 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
+.absolute {
+  position: absolute;
+}
+
 .relative {
   position: relative;
+}
+
+.-top-2 {
+  top: -0.5rem;
+}
+
+.-right-2 {
+  right: -0.5rem;
+}
+
+.z-10 {
+  z-index: 10;
 }
 
 .m-auto {
@@ -575,20 +591,24 @@ video {
   width: 80%;
 }
 
-.w-4\/6 {
-  width: 66.666667%;
+.w-32 {
+  width: 8rem;
 }
 
 .w-full {
   width: 100%;
 }
 
-.w-32 {
-  width: 8rem;
+.w-10\/12 {
+  width: 83.333333%;
 }
 
 .flex-row {
   flex-direction: row;
+}
+
+.flex-col {
+  flex-direction: column;
 }
 
 .items-center {
@@ -605,6 +625,10 @@ video {
 
 .overflow-hidden {
   overflow: hidden;
+}
+
+.rounded-full {
+  border-radius: 9999px;
 }
 
 .rounded-xl {
@@ -625,6 +649,11 @@ video {
   background-color: hsl(0 0% 100% / var(--tw-bg-opacity));
 }
 
+.bg-orange {
+  --tw-bg-opacity: 1;
+  background-color: hsl(26 100% 55% / var(--tw-bg-opacity));
+}
+
 .p-5 {
   padding: 1.25rem;
 }
@@ -634,9 +663,34 @@ video {
   padding-bottom: 1.25rem;
 }
 
-.px-5 {
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
+.px-1 {
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+}
+
+.py-0 {
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+.px-0 {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.text-xs {
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+
+.text-black {
+  --tw-text-opacity: 1;
+  color: hsl(0 0% 0% / var(--tw-text-opacity));
+}
+
+.text-white {
+  --tw-text-opacity: 1;
+  color: hsl(0 0% 100% / var(--tw-text-opacity));
 }
 
 .text-grayishblue {
@@ -669,7 +723,7 @@ a {
   display: none;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 640px) {
   .harmBurgerWrapper {
     display: flex;
     height: 1.25rem;
@@ -701,7 +755,7 @@ a {
   }
 }
 
-@media (max-width: 1440px) {
+@media (max-width: 1280px) {
   .navRightSide {
     width: 50%;
   }
@@ -711,7 +765,7 @@ a {
   width: 66.666667%;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 640px) {
   .navTag {
     z-index: 50;
     --tw-bg-opacity: 1;
@@ -725,13 +779,13 @@ a {
   }
 }
 
-@media (max-width: 1440px) {
+@media (max-width: 1280px) {
   .navTag {
     width: 66.666667%;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 640px) {
   .navTag {
     display: none;
     padding: 0.75rem;
@@ -756,7 +810,7 @@ a {
   line-height: 2.25rem;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 640px) {
   .closeHarmburger {
     display: flex;
     --tw-text-opacity: 1;
@@ -774,7 +828,7 @@ a {
   color: hsl(220 14% 75% / var(--tw-text-opacity));
 }
 
-@media (max-width: 480px) {
+@media (max-width: 640px) {
   .navUl {
     top: 5rem;
     height: 2.5rem;
@@ -802,7 +856,7 @@ a {
   height: 0.25rem;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 640px) {
   .navLink {
     margin-bottom: 1.25rem;
     font-weight: 700;
@@ -813,6 +867,20 @@ a {
   .navLink:hover::before {
     content: var(--tw-content);
     display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .navLink {
+    width: 80%;
+    --tw-bg-opacity: 1;
+    background-color: hsl(26 100% 55% / var(--tw-bg-opacity));
+  }
+}
+
+@media (max-width: 1024px) {
+  .navLink {
+    width: 66.666667%;
   }
 }
 
@@ -868,7 +936,7 @@ a {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
-@media (max-width: 480px) {
+@media (max-width: 640px) {
   .cartViewWrapper {
     right: 1rem;
     top: 5rem;
@@ -887,17 +955,33 @@ a {
   justify-content: center;
 }
 
+@media (max-width: 640px) {
+  .mainWrapper {
+    width: 100%;
+  }
+}
+
 .mainWrapperTwo {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 2.75rem;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 640px) {
   .mainWrapperTwo {
-    flex-direction: row;
-    --tw-bg-opacity: 1;
-    background-color: rgb(220 38 38 / var(--tw-bg-opacity));
+    display: flex;
+  }
+}
+
+@media (max-width: 768px) {
+  .mainWrapperTwo {
+    gap: 2.75rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .mainWrapperTwo {
+    width: 100%;
+    flex-direction: column;
   }
 }
 
@@ -907,7 +991,7 @@ a {
   width: 100%;
 }
 
-@media (max-width: 976px) {
+@media (max-width: 1024px) {
   .mainLeft {
     width: 100%;
   }
@@ -920,12 +1004,26 @@ a {
   border-radius: 1.5rem;
 }
 
+@media (max-width: 640px) {
+  .mainImageWrapper {
+    margin-bottom: 0px;
+    width: 100%;
+    border-radius: 0px;
+  }
+}
+
 .thumbNailsWrapper {
   display: grid;
   width: 91.666667%;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 0.75rem;
   overflow: hidden;
+}
+
+@media (max-width: 640px) {
+  .thumbNailsWrapper {
+    display: none;
+  }
 }
 
 .thumbNail {
@@ -967,6 +1065,13 @@ a {
   }
 }
 
+@media (max-width: 640px) {
+  .mainRight {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+}
+
 .sneakerComp {
   margin-bottom: 0.5rem;
   font-weight: 700;
@@ -980,6 +1085,12 @@ a {
   width: 60%;
   font-size: 2.5rem;
   font-weight: 700;
+}
+
+@media (max-width: 640px) {
+  .sneakerName {
+    margin-bottom: 1rem;
+  }
 }
 
 @media (max-width: 768px) {
@@ -1033,6 +1144,13 @@ a {
   align-items: center;
 }
 
+@media (max-width: 640px) {
+  .cartWrapper {
+    width: 100%;
+    flex-direction: column;
+  }
+}
+
 .numControl {
   margin-right: 2rem;
   display: flex;
@@ -1048,6 +1166,15 @@ a {
   background-color: hsl(223 64% 98% / var(--tw-bg-opacity));
   font-size: 1.2rem;
   font-weight: 700;
+}
+
+@media (max-width: 640px) {
+  .numControl {
+    margin-right: 0px;
+    margin-bottom: 1rem;
+    min-width: 100%;
+    flex-direction: row;
+  }
 }
 
 @media (max-width: 768px) {
@@ -1076,14 +1203,10 @@ a {
 .cartButton {
   cursor: pointer;
   border-radius: 0.5rem;
-  --tw-bg-opacity: 1;
-  background-color: hsl(26 100% 55% / var(--tw-bg-opacity));
   padding-left: 2.5rem;
   padding-right: 2.5rem;
   padding-top: 1rem;
   padding-bottom: 1rem;
-  --tw-text-opacity: 1;
-  color: hsl(0 0% 100% / var(--tw-text-opacity));
   font-weight: 700;
   --tw-shadow-color: hsl(25, 100%, 94%);
   --tw-shadow: var(--tw-shadow-colored);
@@ -1100,13 +1223,38 @@ a {
   background-color: hsl(25 100% 94% / var(--tw-bg-opacity));
 }
 
+@media (max-width: 640px) {
+  .cartButton {
+    width: 100%;
+    text-align: center;
+  }
+}
+
 .hover\:cursor-pointer:hover {
   cursor: pointer;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 640px) {
+  .sm\:fixed {
+    position: fixed;
+  }
+
+  .sm\:w-full {
+    width: 100%;
+  }
+
   .sm\:w-24 {
     width: 6rem;
+  }
+
+  .sm\:bg-white {
+    --tw-bg-opacity: 1;
+    background-color: hsl(0 0% 100% / var(--tw-bg-opacity));
+  }
+
+  .sm\:px-10 {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
   }
 }
 

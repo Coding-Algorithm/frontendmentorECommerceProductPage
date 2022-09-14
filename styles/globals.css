@@ -26,22 +26,19 @@ a {
   @apply w-full h-full bg-black
 }
 
-
-
 .navRightSide {
   @apply flex items-center justify-between w-full md:w-4/6 xlg:w-6/12
 }
 
 .navTag{
   @apply w-4/6 md:w-5/6 xlg:w-4/6 sm:bg-lightgrayishblue sm:z-50;
-  @apply sm:hidden sm:p-3
+  @apply sm:hidden sm:p-3  
 }
 
 .showNavTag{
   @apply sm:flex sm:fixed sm:left-0 sm:top-0 sm:h-full sm:w-3/6 sm:justify-start;
   
 }
-
 
 .closeHarmburger{
   @apply hidden sm:flex mb-10 text-3xl cursor-pointer sm:text-darkgrayishblue
@@ -50,13 +47,14 @@ a {
 .navUl{
   @apply relative top-0 flex justify-between w-full text-grayishblue;
   @apply relative flex justify-between w-full sm:h-10 sm:top-20 text-grayishblue;
-  @apply sm:flex-col;
+  @apply sm:flex-col ;
 }
 
 .navLink {
   @apply hover:before:block hover:before:bg-orange hover:before:w-full;
   @apply hover:before:h-1 hover:before:absolute hover:before:-bottom-[2.3rem] hover:text-black;
-  @apply sm:mb-5 sm:text-black sm:font-bold sm:hover:before:hidden
+  @apply sm:mb-5 sm:text-black sm:font-bold sm:hover:before:hidden;
+  @apply md:w-4/5 md:bg-orange lg:w-4/6;
 }
 
 .activeLink {
@@ -75,15 +73,14 @@ a {
 
 }
 
-
 .mainWrapper {
   @apply w-4/5 m-auto py-20 box-border h-[85vh] items-center;
-  @apply justify-center
+  @apply justify-center sm:w-full
 }
 
 .mainWrapperTwo {
-  @apply grid-cols-5 md:grid lg:grid xlg:grid gap-11;
-  @apply sm:flex-row sm:bg-red-600;
+  @apply grid sm:flex grid-cols-5 md:gap-11;
+  @apply sm:flex-col sm:w-full ;
 }
 
 .mainLeft {
@@ -91,11 +88,13 @@ a {
 }
 
 .mainImageWrapper {
-  @apply w-11/12 rounded-3xl overflow-hidden mb-6
+  @apply w-11/12 rounded-3xl overflow-hidden mb-6;
+  @apply sm:w-full sm:rounded-none sm:mb-0
 }
 
 .thumbNailsWrapper {
-  @apply w-11/12 grid grid-cols-4 gap-3 overflow-hidden
+  @apply w-11/12 grid grid-cols-4 gap-3 overflow-hidden;
+  @apply sm:hidden
 }
 
 .thumbNail {
@@ -116,6 +115,7 @@ a {
   @apply flex flex-col w-full col-start-3 col-end-6;
   @apply content-center justify-center w-full;
   @apply md:w-full;
+  @apply sm:px-2
 }
 
 .sneakerComp {
@@ -124,7 +124,7 @@ a {
 
 .sneakerName {
   @apply text-[2.5rem] font-bold w-3/5 mb-10;
-  @apply md:w-full
+  @apply md:w-full sm:mb-4
 }
 
 .sneakerDesc {
@@ -144,13 +144,14 @@ a {
 
 
 .cartWrapper {
-  @apply flex items-center mt-7
+  @apply flex items-center mt-7;
+  @apply sm:flex-col sm:w-full 
 }
 
 .numControl {
   @apply flex items-center justify-between w-1/6 px-3 py-4 mr-8;
   @apply bg-lightgrayishblue rounded-lg font-bold text-[1.2rem];
-  @apply md:w-2/6
+  @apply md:w-2/6 sm:min-w-full sm:mr-0 sm:flex-row sm:mb-4
 
 }
 
@@ -161,7 +162,8 @@ a {
 
 
 .cartButton {
-  @apply px-10 py-4 text-white rounded-lg cursor-pointer bg-orange ;
-  @apply hover:shadow-2xl shadow-paleorange font-bold active:bg-paleorange
+  @apply px-10 py-4 rounded-lg cursor-pointer;
+  @apply hover:shadow-2xl shadow-paleorange font-bold active:bg-paleorange;
+  @apply sm:w-full sm:text-center
 }
 

@@ -2,19 +2,56 @@ import { NextComponentType } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+
 import CartIcon from "../assets/icon-cart.svg";
-import { MdShoppingCart } from "react-icons/md";
+import { MdDelete, MdFontDownload, MdShoppingCart } from "react-icons/md";
+import { cartActions } from "./store/cartSlice";
+import { productImages } from "./ProductImages";
+import { IconBase } from "react-icons";
 
 const NavComp: NextComponentType = (props) => {
   const [activeLink, setActiveLink] = useState<string>("");
   const [showCart, setShowCart] = useState<boolean>(false);
   const [showNavTag, setShowNavTag] = useState<boolean>(false)
+  const dispatch = useDispatch()
+
+
+  type itemProps = {
+    id: string,
+    price: number,
+    quantity: number,
+    totalPrice: number,
+    name: string
+  }
+
+  type itemsList = itemProps[]
+
+  type stateProps = {
+    cart: {
+      itemsList: itemsList,
+      totalQuantity: number | null 
+    }
+  }
+
+  const addToCart = ({ name, id, price, quantity }: itemProps) => {
+    dispatch(cartActions.addToCart({ name, id, price, quantity }))
+  }
+
+  const removeCart = (id:string) => {
+    dispatch(cartActions.removeCart(id))
+  }
+
+  const cartItems = useSelector((state: stateProps) => state.cart.itemsList)
+  const cart = useSelector((state: stateProps) => state.cart)
+
+  console.log(cartItems)
 
   return (
-    <div className="box-border flex flex-row items-center justify-between w-4/5 py-5 m-auto border-b border-grayishblue">
+    <div className="sm:fixed z-10 box-border flex flex-row items-center justify-between w-4/5 py-5 m-auto border-b sm:bg-white border-grayishblue sm:w-full sm:px-10">
       {/* Logo */}
       <div className="navRightSide">
-        <div onClick={() => { setShowNavTag(true); console.log(showNavTag) }} className="harmBurgerWrapper">
+        <div onClick={() => { setShowNavTag(true) }} className="harmBurgerWrapper">
           <span className="harmBurger"></span>
         </div>
         <div>Logo</div>
@@ -61,7 +98,7 @@ const NavComp: NextComponentType = (props) => {
 
       {/* Right Side */}
       <div className="flex items-center justify-between w-32 sm:w-24">
-        <div>
+        <div className="relative">
           <Image
             className="hover:cursor-pointer"
             width={20}
@@ -70,6 +107,9 @@ const NavComp: NextComponentType = (props) => {
             alt="Profile Pics"
             onClick={() => setShowCart(!showCart)}
           />
+          <div className="absolute -top-2 -right-2 text-xs bg-orange px-1 py-0 rounded-full text-white">
+            {cart.totalQuantity}
+          </div>
           {/* Cart Items */}
           {
             showCart &&
@@ -79,9 +119,34 @@ const NavComp: NextComponentType = (props) => {
                   Cart
                 </div>
 
-                <div className="flex px-5 py-5 h-[13rem] items-center justify-center">
+                <div className="flex flex-col px-0 py-5 h-[13rem] items-center justify-center">
+                  {cartItems.length > 0 && 
+                    cartItems.map((item, index) =>
+
+                    <div key={index} className="flex  w-10/12 items-center justify-between">
+                      <div className="">
+                        <Image
+                          width={50}
+                          height={50}
+                          src={productImages["one"]}
+                          alt="Profile Pics"
+                        />
+                      </div>
+
+                      <div className="">
+                        <h3>Autumn Fall limited Edition</h3>
+                        <span>$125 x {item.quantity} <b>${item.price * item.quantity}.00</b> </span>
+                      </div>
+
+                      <div onClick={() => removeCart(item.id)}>
+                        <MdDelete size={20} />
+                      </div>
+                    </div>
+                  )}
                   <p className="text-grayishblue">
-                    Your Cart Is Empty
+
+                    {
+                      !cartItems.length && "Your Cart Is Empty"}
                   </p>
                 </div>
               </div>
