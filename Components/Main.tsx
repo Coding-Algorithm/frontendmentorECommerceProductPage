@@ -104,7 +104,7 @@ const Main = () => {
                                 -
                             </span>
                             <p>
-                                3
+                                1
                             </p>
                             <span className='plus' onClick={() => addToCart("2", 125, "Autumn Limited Edition")}>
                                 +
