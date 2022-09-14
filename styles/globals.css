@@ -157,7 +157,7 @@ a {
 
 .minus,
 .plus {
-  @apply text-orange hover:cursor-pointer active:text-paleorange
+  @apply text-orange hover:cursor-pointer active:text-paleorange px-5
 }
 
 
